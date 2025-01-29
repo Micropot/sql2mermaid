@@ -22,7 +22,7 @@
 
         // Handle the "Generate Diagram" button click
         document.getElementById("generate-button").addEventListener("click", () => {
-            const code = document.getElementById("generate-button").innerText.trim();
+            const code = document.getElementById("generate-button").value;
             const container = document.getElementById("output");
             
             // Clear previous diagram
