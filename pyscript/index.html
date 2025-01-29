@@ -4,7 +4,6 @@
     <!-- <meta charset="UTF-8"> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!-- <title>Mermaid Diagram Generator</title> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
     <!-- <link rel="stylesheet" href="index.css"> -->
     <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
 <!-- </head> -->
@@ -32,6 +31,7 @@
       <title>Sql2Mermaid : GUI</title>
       <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
       <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   </head>
   <body>
     <h1>Mermaid Diagram Generator</h1>
@@ -45,7 +45,7 @@
         mermaid.initialize({ startOnLoad: false });
 
         // Handle the "Generate Diagram" button click
-        document.getElementById("generate-button").addEventListener("click", () => {
+        document.getElementById("generate_graph").addEventListener("click", () => {
             const code = document.getElementById("mermaid-code").value;
             const container = document.getElementById("output");
             
