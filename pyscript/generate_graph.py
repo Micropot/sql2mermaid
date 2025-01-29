@@ -9,6 +9,7 @@ from sql2mermaid.sql2mermaid import mermaid_generator
 #     output_div.innerText = mermaid_generator(sql_query)
 def generate_graph(event):
     input_text = document.querySelector("#mermaid-code")
+    print("input", input_text)
     sql_query = input_text.value
     output_div = document.querySelector("#output")
 
