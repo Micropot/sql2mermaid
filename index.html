@@ -1,27 +1,3 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en"> -->
-<!-- <head> -->
-    <!-- <meta charset="UTF-8"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <!-- <title>Mermaid Diagram Generator</title> -->
-    <!-- <link rel="stylesheet" href="index.css"> -->
-    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
-<!-- </head> -->
-<!-- <body> -->
-    <!-- <h1>Mermaid Diagram Generator</h1> -->
-    <!-- <textarea id="mermaid-code" placeholder="Enter your Mermaid diagram code here..."></textarea> -->
-    <!-- <button py-click="execute_script">Generate Diagram</button> -->
-    <!-- <div id="diagram-container"> -->
-        <!-- <p>Your diagram will appear here...</p> -->
-    <!-- </div> -->
-    <!-- <script type="py"  src="./test.py"> -->
-
-
-
-    <!-- </script> -->
-    <!-- <textarea id="output" rows="5" cols="40" placeholder="Le message apparaîtra ici..."></textarea> -->
-<!-- </body> -->
-<!-- </html> -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,7 +12,7 @@
   <body>
     <h1>Mermaid Diagram Generator</h1>
     <textarea id="mermaid-code" placeholder="Enter your Mermaid diagram code here..."></textarea>
-    <button py-click="generate_graph">Generate mermaid graph</button>
+    <button py-click="generate_graph", id="generate-button">Generate mermaid graph</button>
     <div id="output">
         <p>Your diagram will appear here...</p>
     </div>
@@ -46,7 +22,7 @@
         mermaid.initialize({ startOnLoad: false });
 
         // Handle the "Generate Diagram" button click
-        document.getElementById("generate_graph").addEventListener("click", () => {
+        document.getElementById("generate_button").addEventListener("click", () => {
             const code = document.getElementById("mermaid-code").value;
             const container = document.getElementById("output");
             
