@@ -12,14 +12,18 @@
     <h1>Mermaid Diagram Generator</h1>
     <textarea id="mermaid-code" placeholder="Enter your Mermaid diagram code here..."></textarea>
     <button py-click="generate_graph", id="generate-button">Generate mermaid graph</button>
-    <script type="py" src="./generate_graph.py" config="./pyscript.json"></script>
     <pre class="mermaid" id="output">
         <p>Your diagram will be there...</p>
     </pre>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
         mermaid.initialize({startOnLoad: false});
-        // Initialize Mermaid
+        document.getElementById("generate-button").addEventListener("click", () => {
+            setTimeout(() => {  // Petit délai pour s'assurer que PyScript a mis à jour le contenu
+                mermaid.run();
+            }, 100);
+        });
     </script>
+    <script type="py" src="./generate_graph.py" config="./pyscript.json"></script>
   </body>
 </html>
