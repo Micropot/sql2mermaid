@@ -21,33 +21,6 @@
 
     <!-- </script> -->
     <!-- <textarea id="output" rows="5" cols="40" placeholder="Le message apparaîtra ici..."></textarea> -->
-    <!-- <script> -->
-        <!-- // Initialize Mermaid -->
-        <!-- mermaid.initialize({ startOnLoad: false }); -->
-
-        <!-- // Handle the "Generate Diagram" button click -->
-        <!-- document.getElementById("generate-button").addEventListener("click", () => { -->
-            <!-- const code = document.getElementById("mermaid-code").value; -->
-            <!-- const container = document.getElementById("diagram-container"); -->
-            
-            <!-- // Clear previous diagram -->
-            <!-- container.innerHTML = ""; -->
-
-            <!-- try { -->
-                <!-- // Render the diagram -->
-                <!-- const id = "generated-diagram"; -->
-                <!-- const tempDiv = document.createElement("div"); -->
-                <!-- tempDiv.setAttribute("id", id); -->
-                <!-- tempDiv.setAttribute("class", "mermaid"); -->
-                <!-- tempDiv.textContent = code; -->
-                <!-- container.appendChild(tempDiv); -->
-
-                <!-- mermaid.init(undefined, `#${id}`); -->
-            <!-- } catch (error) { -->
-                <!-- container.innerHTML = `<p style="color: red;">Error generating diagram: ${error.message}</p>`; -->
-            <!-- } -->
-        <!-- }); -->
-    <!-- </script> -->
 <!-- </body> -->
 <!-- </html> -->
 <!DOCTYPE html>
@@ -67,6 +40,33 @@
     <div id="output">
         <p>Your diagram will appear here...</p>
     </div>
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ startOnLoad: false });
+
+        // Handle the "Generate Diagram" button click
+        document.getElementById("generate-button").addEventListener("click", () => {
+            const code = document.getElementById("mermaid-code").value;
+            const container = document.getElementById("output");
+            
+            // Clear previous diagram
+            container.innerHTML = "";
+
+            try {
+                // Render the diagram
+                const id = "generated-diagram";
+                const tempDiv = document.createElement("div");
+                tempDiv.setAttribute("id", id);
+                tempDiv.setAttribute("class", "mermaid");
+                tempDiv.textContent = code;
+                container.appendChild(tempDiv);
+
+                mermaid.init(undefined, `#${id}`);
+            } catch (error) {
+                container.innerHTML = `<p style="color: red;">Error generating diagram: ${error.message}</p>`;
+            }
+        });
+    </script>
     <script type="py" src="./generate_graph.py" config="./pyscript.json"></script>
   </body>
 </html>
