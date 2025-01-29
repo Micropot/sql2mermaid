@@ -25,6 +25,7 @@
         document.getElementById("generate-button").addEventListener("click", () => {
             setTimeout(() => {
                 const codeElement = document.querySelector("#output .mermaid");
+                console.log(codeElement)
                 if (codeElement) {
                     mermaid.init(undefined, codeElement);
                 }
