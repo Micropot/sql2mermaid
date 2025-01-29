@@ -13,36 +13,10 @@
     <textarea id="mermaid-code" placeholder="Enter your Mermaid diagram code here..."></textarea>
     <button py-click="generate_graph", id="generate-button">Generate mermaid graph</button>
     <script type="py" src="./generate_graph.py" config="./pyscript.json"></script>
-    <div id="output">
-        <!-- <p>Your diagram will appear here...</p> -->
-    </div>
+    <pre class="mermaid" id="output"></pre>
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
         // Initialize Mermaid
-        mermaid.initialize({ startOnLoad: false });
-
-        // Handle the "Generate Diagram" button click
-        document.getElementById("generate-button").addEventListener("click", () => {
-            const code = document.getElementById("output").value;
-            const container = document.getElementById("output");
-            
-            // Clear previous diagram
-            container.innerHTML = "";
-
-            try {
-                // Render the diagram
-                const id = "generated-diagram";
-                const tempDiv = document.createElement("div");
-                tempDiv.setAttribute("id", id);
-                tempDiv.setAttribute("class", "mermaid");
-                tempDiv.textContent = code;
-                container.appendChild(tempDiv);
-
-                mermaid.init(undefined, `#${id}`);
-            } catch (error) {
-                container.innerHTML = `<p style="color: red;">Error generating diagram: ${error.message}</p>`;
-            }
-        });
     </script>
   </body>
 </html>
