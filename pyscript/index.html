@@ -23,14 +23,7 @@
 
         // Handle the "Generate Diagram" button click
         document.getElementById("generate-button").addEventListener("click", () => {
-            setTimeout(() => {
-                const codeElement = document.querySelector("#output .mermaid");
-                console.log(codeElement)
-                if (codeElement) {
-                    mermaid.init(undefined, codeElement);
-                }
-            }, 100);  // Attendre un court instant pour que PyScript ait le temps d'ajouter le diagramme
-
+            const code = document.getElementById("output").innerText.trim();
             const container = document.getElementById("output");
             
             // Clear previous diagram
