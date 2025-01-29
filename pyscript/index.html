@@ -21,7 +21,7 @@
         document.getElementById("generate-button").addEventListener("click", () => {
             setTimeout(() => {  // Petit délai pour s'assurer que PyScript a mis à jour le contenu
                 mermaid.run();
-            }, 100);
+            }, 500);
         });
     </script>
     <script type="py" src="./generate_graph.py" config="./pyscript.json"></script>
