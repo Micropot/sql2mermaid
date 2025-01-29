@@ -16,13 +16,13 @@
         <p>Your diagram will appear here...</p>
     </div>
     <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        // import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
         // Initialize Mermaid
         mermaid.initialize({ startOnLoad: false });
 
         // Handle the "Generate Diagram" button click
         document.getElementById("generate-button").addEventListener("click", () => {
-            const code = document.getElementById("output").innerText.trim();
+            const code = document.getElementById("mermaid-code").value;
             const container = document.getElementById("output");
             
             // Clear previous diagram
